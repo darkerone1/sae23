@@ -18,9 +18,7 @@
             <nav>
                 <ul>
 					<li><a class="link" href="../index.php">Accueil</a></li>
-                    
-                    <li><a class="link" href="../batRT.php">Bat R&T</a></li>
-                    <li><a class="link" href="../batInfo.php">Bat Info</a></li>
+                    <li><a class="link" href="../consultation.php">Consultation</a></li>
 					<li><a class="link" href="../mention_legale.php">Mention L&eacute;gale</a></li>
                     <?php if($_SESSION['username'] == "admin") { ?>
                         <li><a class="link" href="../administration.php">Administration</a></li>
@@ -37,19 +35,24 @@
 		<section id="first">
 			<h2>Supprimer un capteur</h2>
 		</section>
+	<center>
 		<section>
 			<article id="logForm">
 				<form action="delcapteur.php" method="POST">
 					<label for="capteur">Nom du capteur</label><br/>
 					<input type="text" name="nom_capteur" required><br/>
+					<br />
 					<label for="type">Type de capteur</label><br/>
 					<input type="text" name="type" required><br/>
-					<label for="batiment">Ce capteur appartient &aacute; quel batiment</label><br/>
+					<br />
+					<label for="batiment">Ce capteur appartient à quel batiment</label><br/>
 					<input type="batiment" name="nom_batiment" required><br/>
+					<br />
 					<input type="submit" id="submit" value="Submit">
 				</form>
 			</article>
         </section>
+	</center>
 		<aside id="last">
 			<hr />
 		</aside>

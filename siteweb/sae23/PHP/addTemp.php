@@ -17,14 +17,12 @@
 			?>
 			<script src="JS/popup.js"></script>
 			<header>
-			<h1>Supprimer un capteur</h1>
+			<h1>Ajouter une donnée</h1>
 			</header>
 				<nav>
 					<ul>
 						<li><a class="link" href="../index.php">Accueil</a></li>
-					
-						<li><a class="link" href="../batRT.php">Bat R&T</a></li>
-						<li><a class="link" href="../batInfo.php">Bat Info</a></li>
+						<li><a class="link" href="../consultation.php">Consultation</a></li>
 						<li><a class="link" href="../mention_legale.php">Mention L&eacute;gale</a></li>
 						<?php if($_SESSION['username'] == "admin") { ?>
 							<li><a class="link" href="../administration.php">Administration</a></li>

@@ -18,9 +18,7 @@
             <nav>
                 <ul>
 					<li><a class="link" href="../index.php">Accueil</a></li>
-                    
-                    <li><a class="link" href="../batRT.php">Bat R&T</a></li>
-                    <li><a class="link" href="../batInfo.php">Bat Info</a></li>
+                    <li><a class="link" href="../consultation.php">Consultation</a></li>
 					<li><a class="link" href="../mention_legale.php">Mention L&eacute;gale</a></li>
                     <?php if($_SESSION['username'] == "admin") { ?>
                         <li><a class="link" href="../administration.php">Administration</a></li>
@@ -37,6 +35,7 @@
 		<section id="first">
 		<h2>Supprimer un batiment</h2>
 		</section>
+	<center>
 		<section>
 			<article id="logForm">
 				<form action="delbatiment.php" method="POST">
@@ -47,6 +46,7 @@
 				</form>
 			</article>
         </section>
+	</center>
 		<aside id="last">
 			<hr />
 		</aside>

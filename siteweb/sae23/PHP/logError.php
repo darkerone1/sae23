@@ -14,16 +14,14 @@
              }
              mysql_select_db("sae23");
         ?>
-        <script src="JS/popup.js"></script>
+        <script src="../JS/popup.js"></script>
         <header>
 		<h1>Ajouter un capteur</h1>
 		</header>
             <nav>
                 <ul>
                     <li><a class="link" href="../index.php">Accueil</a></li>
-					
-                    <li><a class="link" href="../batRT.php">Bat R&T</a></li>
-                    <li><a class="link" href="../batInfo.php">Bat Info</a></li>
+					<li><a class="link" href="../consultation.php">Consultation</a></li>
 					<li><a class="link" href="../mention_legale.php">Mention L&eacute;gale</a></li>
                     <?php if($_SESSION['username'] == "admin") { ?>
                         <li><a class="link" href="../administration.php">Administration</a></li>
@@ -37,6 +35,19 @@
              		<?php } ?>
                 </ul>
             </nav>
+		<section id="logPopup" class="popup">
+
+            <!-- Popup content -->
+            <article id="log" class="popup-content">
+              <form action="login.php" method="POST">
+                  <label for="username">Nom du compte</label><br/>
+                  <input type="text" name="username" required><br/>
+                  <label for="passwd">Mot de passe</label><br/>
+                  <input type="password" name="password" required><br/>
+                  <input type="submit" id="submit" value="LOGIN">
+              </form>
+            </article>
+        </section>
 		
 		<section id="first">
         <?php

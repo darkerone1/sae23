@@ -1,4 +1,5 @@
 #!/bin/bash
+#wait 5s
 sleep 5s
 #publish a value of temperature
 mosquitto_pub -t iut/RT/E208_temperature -m $[$RANDOM%40]

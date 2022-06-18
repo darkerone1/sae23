@@ -2,7 +2,7 @@
 <html lang="fr">
     <head>
         <meta charset="utf-8">
-        <title>Administration</title>
+        <title>Accueil</title>
         <link rel="stylesheet" href="style/roomStyle.css">
     </head>
     <body>
@@ -18,9 +18,8 @@
             <nav>
                 <ul>
 					<li><a class="link" href="index.php">Accueil</a></li>
+                    <li><a class="link" href="consultation.php">Consultation</a></li>
                     
-                    <li><a class="link" href="batRT.php">Bat R&T</a></li>
-                    <li><a class="link" href="batInfo.php">Bat Info</a></li>
 					<li><a class="link" href="mention_legale.php">Mention L&eacute;gale</a></li>
                     <?php if($_SESSION['username'] == "admin") { ?>
                         <li><a class="link" href="administration.php">Administration</a></li>
@@ -50,15 +49,22 @@
 		<section id="first">
 			<h2>Description</h2>
 			<p>
-				L'objectif du site est de permettre &aacute; des utilisateurs sp&eacute;cifiques d'avoir acc&egrave;s &aacute; des données concernant le batiment auquel ils sont associ&eacute;s.
-				Ils peuvent visualiser des donn&eacute;es sur la temp&eacute;rature ou le taux de CO2 etc grace &aacute; une connexion d&eacute;di&eacute; &aacute; ces utilisateurs.
+				L'objectif du site est de permettre à des utilisateurs sp&eacute;cifiques d'avoir acc&egrave;s &aacute; des données concernant le batiment auquel ils sont associ&eacute;s.
+				Ils peuvent visualiser des donn&eacute;es sur la temp&eacute;rature ou le taux de CO2 etc grâce à une connexion d&eacute;di&eacute; &aacute; ces utilisateurs.
 			</p>	
 		</section>
+		<br />
+		<br />
+		<center>
+			<section>
+			<img src="images/iut.jfif" width="500" height="200"/>
+			</section>
+		</center>
 			<br />
 			<br />
 			
 			<section>
-				<h2>les batiments g&eacute;r&eacute;s:</h2>
+				<h2>Les batiments g&eacute;r&eacute;s:</h2>
 			</section>
 			<?php
              session_start();
@@ -75,7 +81,7 @@
 							<table>
 								<thead>
 									<tr>
-										<td>Nom_batiment</td>
+										<td><strong>Nom_batiment</strong></td>
 									</tr>
 								</thead>
 								<tbody>
@@ -93,7 +99,32 @@
 					</section>
 				</section>
 			
-			
+			<section>
+				<h2>Les capteurs g&eacute;r&eacute;s:</h2>
+			</section>
+				<section id="TableWrapper">
+					<section class="monitor">
+						<article id="TempTable">
+							<table>
+								<thead>
+									<tr>
+										<td><strong>Nom_capteur</strong></td>
+									</tr>
+								</thead>
+								<tbody>
+									<?php
+										$results = mysql_query("SELECT `nom_capteur` FROM `capteur`;");
+										while($row = mysql_fetch_array($results)) {
+									?>
+										<tr>
+											<td><?php echo $row['nom_capteur']?></td>
+										</tr>
+									<?php }?>
+								</tbody>
+							</table>
+						</article>
+					</section>
+				</section>
 		
 		
 		<aside id="last">
