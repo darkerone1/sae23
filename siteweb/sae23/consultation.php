@@ -50,6 +50,7 @@
               </form>
             </article>
         </section>
+		/* the form of consultation */
 		<section>
 			<center>
 				<article id="logForm">

@@ -62,7 +62,8 @@
 						$nom_batiment = $_POST['nom_batiment'];
 						$results = mysql_query("SELECT `nom` FROM `batiment` WHERE `identifiant`='$gestionnaire' ; ");
 						$row = mysql_fetch_array($results);
-						
+						/* admin can manage all sensors */
+						/* the manager of each building can manage their own building */
 						if($nom_batiment == $row['nom'] || $_SESSION['username'] == "admin"){ ?>
 							<table>
 								<thead>
@@ -75,6 +76,7 @@
 								</thead>
 								<tbody>
 									<?php
+									/* Find the corresponding information in the database based on the content of the form */
 										$type_capteur = $_POST['type_capteur'];
 										$nom_batiment = $_POST['nom_batiment'];
 										$nom_salle = $_POST['nom_salle'];
@@ -97,6 +99,7 @@
 							</table>
 							<button id="addTempBtn" onclick="openPopup('addTempBtn','addTempPopup')">Ajouter une valeur</button>
 							<button id="removeTempBtn" onclick="openPopup('removeTempBtn','removeCO2Popup')">Supprimer une valeur</button>
+							/* if we don't have permission to manage the building, show the latest information */
                     <?php } else { 
 							$type_capteur = $_POST['type_capteur'];
 							$nom_batiment = $_POST['nom_batiment'];
@@ -114,7 +117,7 @@
 	</center>
             <!-- Same for this popus since it is linked to the addTempBtn -->
 			 <section id="addTempPopup" class="popup">
-
+					/* the form to add a data */
                     <!-- Popup content -->
                     <article class="popup-content">
                     <form action="addTemp.php" method="post">
@@ -129,7 +132,7 @@
                     </article>
                 </section>
 			
-         
+					/* the form to remove a data */
                 <section id="removeCO2Popup" class="popup">
                     <!-- Popup content -->
                     <article class="popup-content">

@@ -42,6 +42,7 @@
 		<section>
 			<?php
 				/* Accès à la base */
+				/* add an information to database */
 				include ("mysql.php");
 				$nom_capteur = $_POST['nom_capteur'];
 				$type = $_POST['type'];
@@ -52,6 +53,7 @@
 					or die("Execution de la requete impossible : $requete");
 				mysqli_close($id_bd);
 
+				/* display the added information */
 				echo '<div class="ajout">';
 				echo "<br /><strong>La donn&egravee suivante a &eacute;t&eacute; ajout&eacute;e au catalogue : </strong><br />";
 				echo "<ul>

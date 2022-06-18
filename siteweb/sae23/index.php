@@ -66,6 +66,8 @@
 			<section>
 				<h2>Les batiments g&eacute;r&eacute;s:</h2>
 			</section>
+			/* display the managed buildings */
+			
 			<?php
              session_start();
              error_reporting(E_ERROR | E_PARSE);
@@ -98,6 +100,8 @@
 						</article>
 					</section>
 				</section>
+			
+			/* display the managed sensors */
 			
 			<section>
 				<h2>Les capteurs g&eacute;r&eacute;s:</h2>

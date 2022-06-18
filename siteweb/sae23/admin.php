@@ -50,6 +50,8 @@
               </form>
             </article>
         </section>
+		
+		/* the form to login the administrator's account */
 		<section>
 			<center>
 				<article id="logForm">

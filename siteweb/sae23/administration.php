@@ -54,6 +54,7 @@
               </form>
             </article>
 		</section>
+		/* The buttons for modifing the infomations of buildings and sensors */
 		<section>
 			<center>
 				<a href="PHP/form_addbatiment.php"><button>Ajouter un batiment</button></a>

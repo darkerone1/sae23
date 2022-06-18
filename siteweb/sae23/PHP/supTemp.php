@@ -42,12 +42,15 @@
 		<section>
 			<?php
 				/* Accès à la base */
+				/* add an information to database */
 				include ("mysql.php");
 				$id = $_POST['idValeur'];	
 				$requete = "DELETE FROM `mesure` WHERE `id`='$id'";
 				$resultat = mysqli_query($id_bd, $requete)
 					or die("Execution de la requete impossible : $requete");
 				mysqli_close($id_bd);
+				
+				/* display the added information */
 				echo '<div class="supprim">';
 				echo "<br /><strong>La donn&eacute;e suivante a &eacute;t&eacute; supprim&eacute;e au catalogue : </strong><br />";
 				echo "<ul>

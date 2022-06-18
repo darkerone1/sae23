@@ -42,6 +42,7 @@
 		<section>
 			<?php
 				/* Accès à la base */
+				/* add an information to database */
 				include ("mysql.php");
 				$nom_batiment = $_POST['nom_batiment'];
 				$identifiant = $_POST['username'];
@@ -51,7 +52,8 @@
 				$resultat = mysqli_query($id_bd, $requete)
 					or die("Execution de la requete impossible : $requete");
 				mysqli_close($id_bd);
-
+				
+				/* display the added information */
 				echo '<div class="ajout">';
 				echo "<br /><strong>La donn&eacute;e suivante a &eacute;t&eacute; ajout&eacute;e au catalogue : </strong><br />";
 				echo "<ul>

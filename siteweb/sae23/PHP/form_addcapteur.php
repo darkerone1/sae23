@@ -35,6 +35,7 @@
 		<section id="first">
 			<h2>Ajouter un capteur</h2>
 		</section>
+		/* the form for adding a sensor */
 	<center>
 		<section>	
 			<article id="logForm">

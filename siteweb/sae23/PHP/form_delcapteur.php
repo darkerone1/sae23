@@ -35,6 +35,7 @@
 		<section id="first">
 			<h2>Supprimer un capteur</h2>
 		</section>
+		/* the form for removing a sensor */
 	<center>
 		<section>
 			<article id="logForm">

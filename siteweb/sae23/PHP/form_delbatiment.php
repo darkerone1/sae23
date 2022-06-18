@@ -35,6 +35,7 @@
 		<section id="first">
 		<h2>Supprimer un batiment</h2>
 		</section>
+		/* the form for remouving a building */
 	<center>
 		<section>
 			<article id="logForm">

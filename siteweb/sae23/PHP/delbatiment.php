@@ -42,6 +42,7 @@
 		<section>
 			<?php
 				/* Accès à la base */
+				/* remove an information from database */
 				include ("mysql.php");
 				$nom_batiment = $_POST['nom_batiment']; 	
 				$requete = "DELETE FROM `batiment` WHERE `nom`= '$nom_batiment'";
@@ -49,6 +50,7 @@
 					or die("Execution de la requete impossible : $requete");
 				mysqli_close($id_bd);
 
+				/* display the removed information */
 				echo '<div class="ajout">';
 				echo "<br /><strong>La donn&egravee suivante a &eacute;t&eacute; supprim&eacute;e au catalogue : </strong><br />";
 				echo "<ul>

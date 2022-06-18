@@ -35,6 +35,7 @@
 		<section id="first">
 			<h2>Ajouter un batiment</h2>
 		</section>
+		/* the form for adding a building */
 	<center>	
 		<section>
 			<article id="logForm">
