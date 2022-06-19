@@ -65,6 +65,16 @@
 						/* admin can manage all sensors */
 						/* the manager of each building can manage their own building */
 						if($nom_batiment == $row['nom'] || $_SESSION['username'] == "admin"){ ?>
+							<?php
+							$type_capteur = $_POST['type_capteur'];
+							$nom_batiment = $_POST['nom_batiment'];
+							$nom_salle = $_POST['nom_salle'];
+							$results = mysql_query("SELECT `nom_capteur`, `horaire`, avg(`valeur`) as moy, min(`valeur`) as mini, max(`valeur`) as maxi FROM `mesure` 
+													WHERE `nom_capteur`=(SELECT `nom_capteur` FROM `capteur` 
+															WHERE `type_capteur`= '$type_capteur' AND `nom_batiment`='$nom_batiment') 
+															AND `nom_capteur` LIKE '$nom_salle%';");
+							$row = mysql_fetch_array($results); ?>
+							<p>Moyenne : <?php echo $row['moy']," , Min : ", $row['mini']," , Max : ", $row['maxi']," "?></p>
 							<table>
 								<thead>
 									<tr>
@@ -99,7 +109,8 @@
 							</table>
 							<button id="addTempBtn" onclick="openPopup('addTempBtn','addTempPopup')">Ajouter une valeur</button>
 							<button id="removeTempBtn" onclick="openPopup('removeTempBtn','removeCO2Popup')">Supprimer une valeur</button>
-							/* if we don't have permission to manage the building, show the latest information */
+							
+							
                     <?php } else { 
 							$type_capteur = $_POST['type_capteur'];
 							$nom_batiment = $_POST['nom_batiment'];
@@ -108,8 +119,19 @@
                           WHERE `nom_capteur`=(SELECT `nom_capteur` FROM `capteur` 
 															WHERE `type_capteur`= '$type_capteur' AND `nom_batiment`='$nom_batiment') 
 															AND `nom_capteur` LIKE '$nom_salle%'ORDER BY `mesure`.`horaire` DESC LIMIT 1;");
-                          $row = mysql_fetch_array($results) ?>
+                          $row = mysql_fetch_array($results); ?>
+						  
                         <p>Derniere Valeur : <?php echo $row['nom_capteur']," : ", $row['horaire']," : ", $row['valeur']," "?></p>
+						<?php
+							$type_capteur = $_POST['type_capteur'];
+							$nom_batiment = $_POST['nom_batiment'];
+							$nom_salle = $_POST['nom_salle'];
+							$results = mysql_query("SELECT `nom_capteur`, `horaire`, avg(`valeur`) as moy, min(`valeur`) as mini, max(`valeur`) as maxi FROM `mesure` 
+													WHERE `nom_capteur`=(SELECT `nom_capteur` FROM `capteur` 
+															WHERE `type_capteur`= '$type_capteur' AND `nom_batiment`='$nom_batiment') 
+															AND `nom_capteur` LIKE '$nom_salle%';");
+							$row = mysql_fetch_array($results); ?>
+						<p>Moyenne : <?php echo $row['moy']," , Min : ", $row['mini']," , Max : ", $row['maxi']," "?></p>
                     <?php } ?>  
                     </article>
 
