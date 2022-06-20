@@ -31,7 +31,6 @@
                      	  if($_SESSION['username'] != ""){ ?>
                  			<li><a class="link" href="disconnect.php"><button>D&eacute;connexion</button></a></li>
                              <?php } else { ?>
-							 <li><a class="link" href="../admin.php">Connecter admin</a></li>
              				<li><button id="logBtn" onclick="openPopup('logBtn','logPopup')">Connexion</button></li>
              		<?php } ?>
                 </ul>
@@ -139,7 +138,7 @@
 	</center>
             <!-- Same for this popus since it is linked to the addTempBtn -->
 			 <section id="addTempPopup" class="popup">
-					/* the form to add a data */
+					<!-- the form to add a data -->
                     <!-- Popup content -->
                     <article class="popup-content">
                     <form action="addTemp.php" method="post">
@@ -154,7 +153,7 @@
                     </article>
                 </section>
 			
-					/* the form to remove a data */
+					<!-- the form to remove a data -->
                 <section id="removeCO2Popup" class="popup">
                     <!-- Popup content -->
                     <article class="popup-content">

@@ -31,7 +31,6 @@
 							if($_SESSION['username'] != ""){ ?>
 								<li><a class="link" href="disconnect.php"><button>D&eacute;connexion</button></a></li>
 								<?php } else { ?>
-								<li><a class="link" href="../admin.php">Connecter admin</a></li>
 								<li><button id="logBtn" onclick="openPopup('logBtn','logPopup')">Connexion</button></li>
 						<?php } ?>
 					</ul>

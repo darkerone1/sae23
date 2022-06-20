@@ -29,7 +29,6 @@
                      	if($_SESSION['username'] != ""){ ?>
                  			<li><a class="link" href="PHP/disconnect.php"><button>D&eacute;connexion</button></a></li>
                         <?php } else { ?>
-							<li><a class="link" href="admin.php">Connecter admin</a></li>
              				<li><button id="logBtn" onclick="openPopup('logBtn','logPopup')">Connexion</button></li>
              		<?php } ?>
                 </ul>
@@ -267,7 +266,7 @@ new Chart("Chart", {
 	</center>		
 			
 			
-			
+		<!-- display the managed buildings-->	
 			<section>
 				<h2>Les batiments g&eacute;r&eacute;s:</h2>
 			</section>
@@ -307,7 +306,7 @@ new Chart("Chart", {
 				</section>
 			
 			
-			
+			<!-- display the managed sensors-->	
 			<section>
 				<h2>Les capteurs g&eacute;r&eacute;s:</h2>
 			</section>

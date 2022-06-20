@@ -31,7 +31,6 @@
                      	  if($_SESSION['username'] != ""){ ?>
                  			<li><a class="link" href="disconnect.php"><button>D&eacute;connexion</button></a></li>
                              <?php } else { ?>
-							 <li><a class="link" href="../admin.php">Connecter admin</a></li>
              				<li><button id="logBtn" onclick="openPopup('logBtn','logPopup')">Connexion</button></li>
              		<?php } ?>
                 </ul>
@@ -46,9 +45,10 @@
 				include ("mysql.php");
 				$nom_batiment = $_POST['nom_batiment'];
 				$identifiant = $_POST['username'];
-				$mot_de_passe = $_POST['password']; 	
-				$requete = "INSERT INTO `batiment` (`nom`, `identifiant`, `mdp`)
-				VALUES('$nom_batiment','$identifiant','$mot_de_passe')";
+				$mot_de_passe = $_POST['password'];
+				$md5= md5($mot_de_passe);
+				$requete = "INSERT INTO `batiment` (`nom`, `identifiant`, `mdp`,`md5`)
+				VALUES('$nom_batiment','$identifiant','$mot_de_passe','$md5')";
 				$resultat = mysqli_query($id_bd, $requete)
 					or die("Execution de la requete impossible : $requete");
 				mysqli_close($id_bd);

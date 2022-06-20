@@ -27,7 +27,6 @@
                      	if($_SESSION['username'] != ""){ ?>
                  			<li><a class="link" href="PHP/disconnect.php"><button>D&eacute;connexion</button></a></li>
                         <?php } else { ?>
-							<li><a class="link" href="admin.php">Connecter admin</a></li>
              				<li><button id="logBtn" onclick="openPopup('logBtn','logPopup')">Connexion</button></li>
              		<?php } ?>
                 </ul>
@@ -50,7 +49,7 @@
               </form>
             </article>
         </section>
-		/* the form of consultation */
+		<!-- the form of consultation -->
 		<section>
 			<center>
 				<article id="logForm">
