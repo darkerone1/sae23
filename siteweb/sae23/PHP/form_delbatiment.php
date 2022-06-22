@@ -25,28 +25,27 @@
                     <?php } ?>
                     <?php
                      	if($_SESSION['username'] != ""){ ?>
-                 			<li><a class="link" href="disconnect.php"><button>D&eacute;connexion</button></a></li>
+                 			<li><a class="link" href="disconnect.php">D&eacute;connexion</a></li>
                         <?php } else { ?>
              				<li><button id="logBtn" onclick="openPopup('logBtn','logPopup')">Connexion</button></li>
              		<?php } ?>
                 </ul>
             </nav>
-		<section id="first">
-		<h2>Supprimer un batiment</h2>
-		</section>
+		
 		<!-- the form for remouving a building -->
-	<center>
-		<section>
+	
+		<section class="center" id="first">
+			<h2 class="left">Supprimer un batiment</h2>
 			<article id="logForm">
 				<form action="delbatiment.php" method="POST">
-					<label for="batiment">Nom du batiment</label><br/>
+					<label>Nom du batiment</label><br/>
 					<input type="text" name="nom_batiment" required><br/>
 					<br />
 					<input type="submit" id="submit" value="Submit">
 				</form>
 			</article>
         </section>
-	</center>
+	
 		<aside id="last">
 			<hr />
 		</aside>

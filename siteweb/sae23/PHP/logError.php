@@ -28,7 +28,7 @@
                     <?php } ?>
                      <?php
                      	  if($_SESSION['username'] != ""){ ?>
-                 			<li><a class="link" href="disconnect.php"><button>D&eacute;connexion</button></a></li>
+                 			<li><a class="link" href="disconnect.php">D&eacute;connexion</a></li>
                              <?php } else { ?>
              				 <li><button id="logBtn" onclick="openPopup('logBtn','logPopup')">Connexion</button></li>
              		<?php } ?>

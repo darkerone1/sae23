@@ -25,7 +25,7 @@
                     <?php } ?>
                     <?php
                      	if($_SESSION['username'] != ""){ ?>
-                 			<li><a class="link" href="PHP/disconnect.php"><button>D&eacute;connexion</button></a></li>
+                 			<li><a class="link" href="PHP/disconnect.php">D&eacute;connexion</a></li>
                         <?php } else { ?>
              				<li><button id="logBtn" onclick="openPopup('logBtn','logPopup')">Connexion</button></li>
              		<?php } ?>
@@ -36,9 +36,9 @@
             <!-- Popup content -->
             <article id="log" class="popup-content">
               <form action="./PHP/login.php" method="POST">
-                  <label for="username">Nom du compte</label><br/>
+                  <label>Nom du compte</label><br/>
                   <input type="text" name="username" required><br/>
-                  <label for="passwd">Mot de passe</label><br/>
+                  <label>Mot de passe</label><br/>
                   <input type="password" name="password" required><br/>
                   <input type="submit" id="submit" value="LOGIN">
               </form>
@@ -70,29 +70,29 @@
 		</p>
 		<h2><strong>2 - Propriété intellectuelle et contrefaçons.</strong></h2>
 		<p>
-		<strong>ZHAO Xinyu</strong> est propriétaire des droits de propriété intellectuelle et détient les droits d’usage sur tous les éléments accessibles sur le site internet, notamment les textes, images, graphismes, logos, vidéos, architecture, icônes et sons.
+		<strong>Groupe amaury</strong> est propriétaire des droits de propriété intellectuelle et détient les droits d’usage sur tous les éléments accessibles sur le site internet, notamment les textes, images, graphismes, logos, vidéos, architecture, icônes et sons.
 		</p>
 		<p>
-		Toute reproduction, représentation, modification, publication, adaptation de tout ou partie des éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite, sauf autorisation écrite préalable de <strong>ZHAO Xinyu.</strong>
+		Toute reproduction, représentation, modification, publication, adaptation de tout ou partie des éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite, sauf autorisation écrite préalable de <strong>Groupe amaury.</strong>
 		</p>
 		<p>
 		Toute exploitation non autorisée du site ou de l’un quelconque des éléments qu’il contient sera considérée comme constitutive d’une contrefaçon et poursuivie conformément aux dispositions des articles L.335-2 et suivants du Code de Propriété Intellectuelle.
 		</p>
 		<h2><strong>3 - Limitations de responsabilité.</strong></h2>
 		<p>
-		<strong>ZHAO Xinyu</strong> ne pourra être tenu pour responsable des dommages directs et indirects causés au matériel de l’utilisateur, lors de l’accès au site http://localhost/sae23.
+		<strong>Groupe amaury</strong> ne pourra être tenu pour responsable des dommages directs et indirects causés au matériel de l’utilisateur, lors de l’accès au site http://localhost/sae23.
 		</p>
 		<p>
-		<strong>ZHAO Xinyu</strong> décline toute responsabilité quant à l’utilisation qui pourrait être faite des informations et contenus présents sur http://localhost/sae23.
+		<strong>Groupe amaury</strong> décline toute responsabilité quant à l’utilisation qui pourrait être faite des informations et contenus présents sur http://localhost/sae23.
 		</p>
 		<p>
-		<strong>ZHAO Xinyu</strong> s’engage à sécuriser au mieux le site http://localhost/sae23, cependant sa responsabilité ne pourra être mise en cause si des données indésirables sont importées et installées sur son site à son insu.
+		<strong>Groupe amaury</strong> s’engage à sécuriser au mieux le site http://localhost/sae23, cependant sa responsabilité ne pourra être mise en cause si des données indésirables sont importées et installées sur son site à son insu.
 		</p>
 		<p>
-		Des espaces interactifs (espace contact ou commentaires) sont à la disposition des utilisateurs.<strong>ZHAO Xinyu</strong> se réserve le droit de supprimer, sans mise en demeure préalable, tout contenu déposé dans cet espace qui contreviendrait à la législation applicable en France, en particulier aux dispositions relatives à la protection des données.
+		Des espaces interactifs (espace contact ou commentaires) sont à la disposition des utilisateurs.<strong>Groupe amaury</strong> se réserve le droit de supprimer, sans mise en demeure préalable, tout contenu déposé dans cet espace qui contreviendrait à la législation applicable en France, en particulier aux dispositions relatives à la protection des données.
 		</p>
 		<p>
-		Le cas échéant, <strong>ZHAO Xinyu</strong> se réserve également la possibilité de mettre en cause la responsabilité civile et/ou pénale de l’utilisateur, notamment en cas de message à caractère raciste, injurieux, diffamant, ou p****graphique, quel que soit le support utilisé (texte, photographie …).
+		Le cas échéant, <strong>Groupe amaury</strong> se réserve également la possibilité de mettre en cause la responsabilité civile et/ou pénale de l’utilisateur, notamment en cas de message à caractère raciste, injurieux, diffamant, ou p****graphique, quel que soit le support utilisé (texte, photographie …).
 		</p>
 		<h2><strong>4 - CNIL et gestion des données personnelles.</strong></h2>
 		<p>
@@ -106,7 +106,7 @@
 		</p>
 		<h2><strong>5 - Liens hypertextes et cookies</strong></h2>
 		<p>
-		Le site http://localhost/sae23 contient des liens hypertextes vers d’autres sites et dégage toute responsabilité à propos de ces liens externes ou des liens créés par d’autres sites vers http://xzhao.atwebpages.com/SAé14.
+		Le site http://localhost/sae23 contient des liens hypertextes vers d’autres sites et dégage toute responsabilité à propos de ces liens externes ou des liens créés par d’autres sites vers http://localhost/sae23.
 		</p>
 		<p>
 		La navigation sur le site http://localhost/sae23 est susceptible de provoquer l’installation de cookie(s) sur l’ordinateur de l’utilisateur.

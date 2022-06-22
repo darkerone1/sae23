@@ -25,34 +25,33 @@
                     <?php } ?>
                     <?php
                      	if($_SESSION['username'] != ""){ ?>
-                 			<li><a class="link" href="disconnect.php"><button>D&eacute;connexion</button></a></li>
+                 			<li><a class="link" href="disconnect.php">D&eacute;connexion</a></li>
                         <?php } else { ?>
              				<li><button id="logBtn" onclick="openPopup('logBtn','logPopup')">Connexion</button></li>
              		<?php } ?>
                 </ul>
             </nav>
-		<section id="first">
-			<h2>Supprimer un capteur</h2>
-		</section>
+		
 		<!-- the form for removing a sensor -->
-	<center>
-		<section>
+	
+		<section class="center" id="first">
+			<h2 class="left">Supprimer un capteur</h2>
 			<article id="logForm">
 				<form action="delcapteur.php" method="POST">
-					<label for="capteur">Nom du capteur</label><br/>
-					<input type="text" name="nom_capteur" required><br/>
+					<label>Nom du capteur</label><br/>
+					<input type="text" name="nom_capteur" ><br/>
 					<br />
-					<label for="type">Type de capteur</label><br/>
-					<input type="text" name="type" required><br/>
+					<label>Type de capteur</label><br/>
+					<input type="text" name="type" ><br/>
 					<br />
-					<label for="batiment">Ce capteur appartient à quel batiment</label><br/>
-					<input type="batiment" name="nom_batiment" required><br/>
+					<label>Ce capteur appartient à quel batiment</label><br/>
+					<input type="text" name="nom_batiment" ><br/>
 					<br />
 					<input type="submit" id="submit" value="Submit">
 				</form>
 			</article>
         </section>
-	</center>
+	
 		<aside id="last">
 			<hr />
 		</aside>

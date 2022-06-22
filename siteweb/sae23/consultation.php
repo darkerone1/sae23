@@ -25,7 +25,7 @@
                     <?php } ?>
                     <?php
                      	if($_SESSION['username'] != ""){ ?>
-                 			<li><a class="link" href="PHP/disconnect.php"><button>D&eacute;connexion</button></a></li>
+                 			<li><a class="link" href="PHP/disconnect.php">D&eacute;connexion</a></li>
                         <?php } else { ?>
              				<li><button id="logBtn" onclick="openPopup('logBtn','logPopup')">Connexion</button></li>
              		<?php } ?>
@@ -41,32 +41,32 @@
             <!-- Popup content -->
             <article id="log" class="popup-content">
               <form action="./PHP/login.php" method="POST">
-                  <label for="username">Nom du compte</label><br/>
+                  <label>Nom du compte</label><br/>
                   <input type="text" name="username" required><br/>
-                  <label for="passwd">Mot de passe</label><br/>
+                  <label>Mot de passe</label><br/>
                   <input type="password" name="password" required><br/>
                   <input type="submit" id="submit" value="LOGIN">
               </form>
             </article>
         </section>
 		<!-- the form of consultation -->
-		<section>
-			<center>
+		<section class="center">
+			
 				<article id="logForm">
 					<form action="PHP/resultat.php" method="POST">
-						<label for="nom_batiment">Nom de batiment que vous voulez consulter:</label><br/>
+						<label>Nom de batiment que vous voulez consulter:</label><br/>
 						<input type="text" name="nom_batiment" required><br/>
 						<br />
-						<label for="type_capteur">Le type de capteur que vous voulez consulter:</label><br/>
+						<label >Le type de capteur que vous voulez consulter:</label><br/>
 						<input type="text" name="type_capteur" required><br/>
 						<br />
-						<label for="nom_salle">Le nom de la salle que vous voulez consulter:</label><br/>
+						<label >Le nom de la salle que vous voulez consulter:</label><br/>
 						<input type="text" name="nom_salle" required><br/>
 						<br />
-						<input type="submit" id="submit" value="submit">
+						<input type="submit" id="submit1" value="submit">
 					</form>
 				</article>
-			</center>
+			
         </section>
 		<aside id="last">
 			<hr />

@@ -25,7 +25,7 @@
                     <?php } ?>
                     <?php
                      	if($_SESSION['username'] != ""){ ?>
-                 			<li><a class="link" href="disconnect.php"><button>D&eacute;connexion</button></a></li>
+                 			<li><a class="link" href="disconnect.php">D&eacute;connexion</a></li>
                         <?php } else { ?>
              				<li><button id="logBtn" onclick="openPopup('logBtn','logPopup')">Connexion</button></li>
              		<?php } ?>
@@ -36,24 +36,24 @@
 		</section>
 		
 		<!-- the form for adding a building -->
-	<center>	
-		<section>
+	
+		<section class="center">
 			<article id="logForm">
 				<form action="addbatiment.php" method="POST">
-					<label for="batiment">Nom du batiment</label><br/>
+					<label>Nom du batiment</label><br/>
 					<input type="text" name="nom_batiment" required><br/>
 					<br />
-					<label for="username">identifiant du chef de ce batiment</label><br/>
+					<label>identifiant du chef de ce batiment</label><br/>
 					<input type="text" name="username" required><br/>
 					<br />
-					<label for="passwd">Mot de passe</label><br/>
+					<label>Mot de passe</label><br/>
 					<input type="password" name="password" required><br/>
 					<br />
 					<input type="submit" id="submit" value="Submit">
 				</form>
 			</article>
         </section>
-	</center>
+	
 		<aside id="last">
 			<hr />
 		</aside>

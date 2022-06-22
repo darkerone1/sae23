@@ -29,7 +29,7 @@
                     <?php } ?>
 					<?php
                      	  if($_SESSION['username'] != ""){ ?>
-                 			<li><a class="link" href="PHP/disconnect.php"><button>D&eacute;connexion</button></a></li>
+                 			<li><a class="link" href="PHP/disconnect.php">D&eacute;connexion</a></li>
                              <?php } else if($_SESSION['username'] == "admin"){ ?>
              				<li><a class="link" href="#">Administration</a></li>
              		<?php } else { ?>
@@ -46,17 +46,17 @@
             <!-- Popup content -->
             <article id="log" class="popup-content">
               <form action="./PHP/login.php" method="POST">
-                  <label for="username">Nom du compte</label><br/>
+                  <label>Nom du compte</label><br/>
                   <input type="text" name="username" required><br/>
-                  <label for="passwd">Mot de passe</label><br/>
+                  <label>Mot de passe</label><br/>
                   <input type="password" name="password" required><br/>
                   <input type="submit" id="submit" value="LOGIN">
               </form>
             </article>
 		</section>
 		<!-- The buttons for modifing the infomations of buildings and sensors -->
-		<section>
-			<center>
+		<section class="center">
+			
 				<a href="PHP/form_addbatiment.php"><button>Ajouter un batiment</button></a>
 				<br />
 				<br />
@@ -67,7 +67,7 @@
 				<br />
 				<br />
 				<a href="PHP/form_delcapteur.php"><button>Supprimer un capteur</button></a>
-			</center>
+			
 		</section>
 			
 		<aside id="last">

@@ -43,19 +43,37 @@
 				/* Accès à la base */
 				/* add an information to database */
 				include ("mysql.php");
-				$id = $_POST['idValeur'];	
-				$requete = "DELETE FROM `mesure` WHERE `id`='$id'";
-				$resultat = mysqli_query($id_bd, $requete)
-					or die("Execution de la requete impossible : $requete");
-				mysqli_close($id_bd);
+				$id = $_POST['idValeur'];
+				$nom_capteur = $_POST['nomCap'];				
+				$gestionnaire=$_SESSION['username'];
+				$results = mysql_query("SELECT `identifiant` FROM `batiment` WHERE `nom`=(SELECT `nom_batiment` FROM `capteur` WHERE `nom_capteur`='$nom_capteur'); ");
+				$row = mysql_fetch_array($results);
+				if($gestionnaire == $row['identifiant'] || $_SESSION['username'] == "admin"){
+					/* verify if the data exite in the database */
+					$results = mysql_query("SELECT * FROM `mesure` WHERE `id`='$id'; ");
+					$row = mysql_fetch_array($results);
+					if(!mysql_num_rows($results)){
+						
+						echo "<br /><strong>cette donnée existe pas, vérifier votre saisie SVP </strong><br />";
+						
+					} else {
+							$requete = "DELETE FROM `mesure` WHERE `id`='$id'";
+							$resultat = mysqli_query($id_bd, $requete)
+								or die("Execution de la requete impossible : $requete");
+							mysqli_close($id_bd);
 				
-				/* display the added information */
-				echo '<div class="supprim">';
-				echo "<br /><strong>La donn&eacute;e suivante a &eacute;t&eacute; supprim&eacute;e au catalogue : </strong><br />";
-				echo "<ul>
-						<li> id : $id </li>
-						</ul>
-					</div>";
+							/* display the added information */
+							echo '<div class="supprim">';
+							echo "<br /><strong>La donn&eacute;e suivante a &eacute;t&eacute; supprim&eacute;e au catalogue : </strong><br />";
+							echo "<ul>
+									<li> nom de capteur : $nom_capteur </li>
+									<li> id : $id </li>
+									</ul>
+								</div>";
+						}
+				} else {
+					echo "<br /><strong>Vous n'avez pas de droit pour modifier les donnée de ce capteur</strong><br />";
+						}
 			?>
 		
 			<hr />

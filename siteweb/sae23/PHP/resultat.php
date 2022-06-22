@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        <meta charset="utf8">
+        <meta charset="utf-8">
         <title>consultation des données</title>
         <link rel="stylesheet" href="../style/roomStyle.css">
     </head>
@@ -29,7 +29,7 @@
                     <?php } ?>
                      <?php
                      	  if($_SESSION['username'] != ""){ ?>
-                 			<li><a class="link" href="disconnect.php"><button>D&eacute;connexion</button></a></li>
+                 			<li><a class="link" href="disconnect.php">D&eacute;connexion</a></li>
                              <?php } else { ?>
              				<li><button id="logBtn" onclick="openPopup('logBtn','logPopup')">Connexion</button></li>
              		<?php } ?>
@@ -43,17 +43,17 @@
             <!-- Popup content -->
             <article id="log" class="popup-content">
               <form action="login.php" method="POST">
-                  <label for="username">Nom du compte</label><br/>
+                  <label>Nom du compte</label><br/>
                   <input type="text" name="username" required><br/>
-                  <label for="passwd">Mot de passe</label><br/>
+                  <label>Mot de passe</label><br/>
                   <input type="password" name="password" required><br/>
                   <input type="submit" id="submit" value="LOGIN">
               </form>
             </article>
         </section>
 
-    <center>    
-        <section id="TableWrapper">
+
+        <section id="TableWrapper" class="center">
             <section class="monitor">
                     <article id="TempTable">
                     <?php 
@@ -135,19 +135,19 @@
                     </article>
 
         </section>
-	</center>
+	
             <!-- Same for this popus since it is linked to the addTempBtn -->
 			 <section id="addTempPopup" class="popup">
 					<!-- the form to add a data -->
                     <!-- Popup content -->
                     <article class="popup-content">
                     <form action="addTemp.php" method="post">
-                        <label for="date">Date et heure</label><br/>
+                        <label>Date et heure</label><br/>
                         <input type="datetime-local" id="datetime" name="datetime"><br/>
-                        <label for="temperature">Valeur</label><br/>
+                        <label>Valeur</label><br/>
                         <input type="number" id="temperature" name="valeur"><br/>
-                        <label for="nomCap">Nom du Capteur</label> </br>
-                        <input type="text" name="nomCap" id="nomCap"> </br>
+                        <label>Nom du Capteur</label> <br/>
+                        <input type="text" name="nomCap" id="nomCap"> <br/>
                         <input type="submit" value="Submit" class="subBtn">
                     </form>
                     </article>
@@ -158,8 +158,10 @@
                     <!-- Popup content -->
                     <article class="popup-content">
                         <form action="supTemp.php" method="post">
-                            <label for="CO2">ID de la valeur</label><br/>
+                            <label>ID de la valeur</label><br/>
                             <input type="number" id="ID" name="idValeur"><br/>
+							<label>Nom du Capteur</label> <br/>
+							<input type="text" name="nomCap" id="nomCap1"> <br/>
                             <input type="submit" value="Submit" class="subBtn">
                         </form>
                     </article>

@@ -29,7 +29,7 @@
 						<?php } ?>
 						<?php
 							if($_SESSION['username'] != ""){ ?>
-								<li><a class="link" href="disconnect.php"><button>D&eacute;connexion</button></a></li>
+								<li><a class="link" href="disconnect.php">D&eacute;connexion</a></li>
 								<?php } else { ?>
 								<li><button id="logBtn" onclick="openPopup('logBtn','logPopup')">Connexion</button></li>
 						<?php } ?>
@@ -44,18 +44,26 @@
 				/* remove an information from database */
 				include ("mysql.php");
 				$nom_batiment = $_POST['nom_batiment']; 	
-				$requete = "DELETE FROM `batiment` WHERE `nom`= '$nom_batiment'";
-				$resultat = mysqli_query($id_bd, $requete)
-					or die("Execution de la requete impossible : $requete");
-				mysqli_close($id_bd);
+				/* verify if the building exite in the database */
+				$results = mysql_query("SELECT `nom` FROM `batiment` WHERE `nom`='$nom_batiment'; ");
+				$row = mysql_fetch_array($results);
+				if(!mysql_num_rows($results)){
+					echo "<br /><strong>ce batiment existe pas, vérifier votre saisie SVP </strong><br />";
+						
+				} else {
+					$requete = "DELETE FROM `batiment` WHERE `nom`= '$nom_batiment'";
+					$resultat = mysqli_query($id_bd, $requete)
+						or die("Execution de la requete impossible : $requete");
+					mysqli_close($id_bd);
 
-				/* display the removed information */
-				echo '<div class="ajout">';
-				echo "<br /><strong>La donn&egravee suivante a &eacute;t&eacute; supprim&eacute;e au catalogue : </strong><br />";
-				echo "<ul>
-						<li> Nom du batiment : $nom_batiment</li>
-						</ul>
-					</div>";	
+					/* display the removed information */
+					echo '<div class="ajout">';
+					echo "<br /><strong>La donn&egravee suivante a &eacute;t&eacute; supprim&eacute;e au catalogue : </strong><br />";
+					echo "<ul>
+							<li> Nom du batiment : $nom_batiment</li>
+							</ul>
+						</div>";	
+						}
 			?>
 			<hr />
 			<a href="../administration.php"><button>OK</button></a>

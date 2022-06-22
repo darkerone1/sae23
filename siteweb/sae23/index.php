@@ -27,20 +27,21 @@
                     <?php } ?>
                     <?php
                      	if($_SESSION['username'] != ""){ ?>
-                 			<li><a class="link" href="PHP/disconnect.php"><button>D&eacute;connexion</button></a></li>
+                 			<li><a class="link" href="PHP/disconnect.php">D&eacute;connexion</a></li>
                         <?php } else { ?>
              				<li><button id="logBtn" onclick="openPopup('logBtn','logPopup')">Connexion</button></li>
              		<?php } ?>
                 </ul>
             </nav>
 		<section id="logPopup" class="popup">
-
+			<h3>login</h3>
             <!-- Popup content -->
             <article id="log" class="popup-content">
+			  <h4>login</h4>
               <form action="./PHP/login.php" method="POST">
-                  <label for="username">Nom du compte</label><br/>
+                  <label>Nom du compte</label><br/>
                   <input type="text" name="username" required><br/>
-                  <label for="passwd">Mot de passe</label><br/>
+                  <label>Mot de passe</label><br/>
                   <input type="password" name="password" required><br/>
                   <input type="submit" id="submit" value="LOGIN">
               </form>
@@ -49,28 +50,28 @@
 		<section id="first">
 			<h2>Description</h2>
 			<p>
-				L'objectif du site est de permettre à des utilisateurs sp&eacute;cifiques d'avoir acc&egrave;s &aacute; des données concernant le batiment auquel ils sont associ&eacute;s.
+				L'objectif du site est de permettre à des utilisateurs sp&eacute;cifiques d'avoir acc&egrave;s à des données concernant le batiment auquel ils sont associ&eacute;s.
 				Ils peuvent visualiser des donn&eacute;es sur la temp&eacute;rature ou le taux de CO2 etc grâce à une connexion d&eacute;di&eacute; &aacute; ces utilisateurs.
 			</p>	
 		</section>
 		<br />
 		<br />
-		<center>
-			<section>
-			<img src="images/iut.jfif" width="500" height="200"/>
-			</section>
-		</center>
+		
+		<div class="center">
+			<img src="images/iut.jfif" alt="image" width="500" height="200"/>
+		</div>	
+		
 			<br />
 			<br />
 			
 			
 			
-<section>
-		<h2>Les temperatures de IUT:</h2>
-</section>	
+
+<section class="center">
+<h2 class="left">Les temperatures de IUT:</h2>
 <!--la graphique de la temperature de IUT ligne rouge est E208 ligne verte est D101-->	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-	<center>	
+		
 		<canvas id="myChart" style="width:100%;max-width:600px"></canvas>
 						
 								
@@ -116,7 +117,7 @@
 		$value9 = $value[8];
 		$value10 = $value[9];
 		
-		echo "<script type=\"text/javascript\">\n";
+		echo "<script>\n";
 		echo "var valeur1 = ${valeur1};\n";
 		echo "var valeur2 = ${valeur2};\n";
 		echo "var valeur3 = ${valeur3};\n";
@@ -163,14 +164,13 @@ new Chart("myChart", {
   }
 });
 </script>
-		
-	</center>
+</section>	
+	
 		<!--la graphique de co2 de IUT ligne rouge est E208 ligne verte est D101-->	
-			<section>
-				<h2>Les CO2 de IUT:</h2>
-			</section>		
+<section class="center">
+<h2 class="left">Les CO2 de IUT:</h2>			
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-	<center>	
+	
 		<canvas id="Chart" style="width:100%;max-width:600px"></canvas>			
 	<?php
 			session_start();
@@ -214,7 +214,7 @@ new Chart("myChart", {
 		$dat9 = $dat[8];
 		$dat10 = $dat[9];
 		
-		echo "<script type=\"text/javascript\">\n";
+		echo "<script>\n";
 		echo "var data1 = ${data1};\n";
 		echo "var data2 = ${data2};\n";
 		echo "var data3 = ${data3};\n";
@@ -235,8 +235,6 @@ new Chart("myChart", {
 		echo "var dat8 = ${dat8};\n";
 		echo "var dat9 = ${dat9};\n";
 		echo "var dat10 = ${dat10};\n";
-		echo "</script>\n";
-		
 		echo "</script>\n";
 	?>	
 		
@@ -262,14 +260,12 @@ new Chart("Chart", {
   }
 });
 </script>
-		
-	</center>		
+</section>	
+			
 			
 			
 		<!-- display the managed buildings-->	
-			<section>
-				<h2>Les batiments g&eacute;r&eacute;s:</h2>
-			</section>
+			
 			
 			
 			<?php
@@ -281,9 +277,14 @@ new Chart("Chart", {
              }
              mysql_select_db("sae23");
 			?> 
-				<section id="TableWrapper">
+				
+					
+				<section class="TableWrapper">
+					
 					<section class="monitor">
-						<article id="TempTable">
+					<h2>Les bâtiments g&eacute;r&eacute;s:</h2>
+						<article id="builTable">
+					
 							<table>
 								<thead>
 									<tr>
@@ -308,11 +309,13 @@ new Chart("Chart", {
 			
 			<!-- display the managed sensors-->	
 			<section>
-				<h2>Les capteurs g&eacute;r&eacute;s:</h2>
+				
 			</section>
-				<section id="TableWrapper">
+				<section class="TableWrapper">
+					
 					<section class="monitor">
-						<article id="TempTable">
+					<h2>Les capteurs g&eacute;r&eacute;s:</h2>
+						<article id="capteurTable">
 							<table>
 								<thead>
 									<tr>
